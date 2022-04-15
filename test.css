@@ -1,0 +1,159 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './slick.css';
+@font-face {
+    font-family: 'Open Sans';
+    src: url(../fonts/OpenSans-Semibold.woff2) format('woff2'),url('../fonts/OpenSans-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url(../fonts/Raleway-Bold.woff) format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+body{
+    @apply font-sans;
+}
+.nav-primary .nav > li > a{
+	@apply py-5 md:pt-11 px-3.5 md:pb-9 relative uppercase;
+}
+.sub-menu{
+	@apply bg-black text-white z-20 block md:hidden relative md:absolute bg-[#1c1c1c] w-full md:w-[270px] ease-in-out shadow-3xl;
+}
+.mobile > ul > li .menu-item-has-children .sub-menu{
+    @apply block;
+}
+.nav-primary .menu-item a{
+	@apply inline-block;
+}
+.menu-item-has-children:hover .sub-menu{
+	@apply md:block;
+}
+.nav-primary .sub-menu li a{
+	@apply px-7 py-5 text-gray-500 relative inline-block ml-6 md:ml-0;
+}
+.sub-menu li a:before{
+	@apply content-[''] absolute left-0 top-2/4 w-0 h-px invisible opacity-0 bg-white transition-all ease-linear duration-300;
+}
+.sub-menu li a:hover:before{
+	@apply left-0 visible opacity-100 w-8;
+}
+.nav-primary .sub-menu .menu-item a:hover{
+	@apply text-white py-5 px-9 my-0 mx-7 transition-all ease-linear duration-300;
+}
+.widget_block .wp-block-group h2,.wp-block-archives a,.wp-block-categories a,.menu li a,.widget_block ul li { 
+    @apply text-white;
+}
+.wp-block-group h2{
+    @apply text-lg my-8 w-60;
+}
+.wp-block-group ul li{
+    @apply text-lg leading-10;
+}
+.wp-block-group ul li a,.wp-block-group ul li span{
+    @apply text-gray-400;
+}
+.widget_block .wp-block-group .wp-block-group h2{
+    @apply text-gray-400;
+}
+.slide-arrow.prev-arrow{
+    @apply bg-white z-10 absolute left-0 h-16 w-16 bottom-0;
+}
+.slide-arrow.prev-arrow:after{
+    @apply content-[''] bg-left-arrow-bg absolute h-5 w-5 inset-x-0 mx-auto bg-no-repeat bottom-[20px];
+}
+.slide-arrow.next-arrow{
+    @apply bg-white z-10 absolute left-[64px] h-16 w-16 bottom-0;
+}
+.slide-arrow.next-arrow:after{
+    @apply content-[''] bg-right-arrow-bg absolute h-5 w-5 inset-x-0 mx-auto bg-no-repeat bottom-[20px];
+}
+.einfach-main-head:after{
+    @apply content-['…………'] text-black text-[23px] leading-[23px] absolute left-0 md:top-[25px] top-[15px];
+}
+.das-sind-main-head:after{
+    @apply content-['…………'] text-black text-[23px] leading-[23px] absolute left-0 lg:top-[75px] xl:top-[35px] top-[22px];   
+}
+.yellow-btn:after , .yellow-btn::before{
+    @apply content-[''] absolute bg-[#FFA830] transition-all duration-300;
+}
+.yellow-btn:before{
+    @apply h-[1px] left-[10px] bottom-[-6px] w-btn-bottom-line-width;
+}
+.yellow-btn:after{
+    @apply h-btn-side-line-height top-[10px] right-[-6px] w-[1px];
+}
+.yellow-btn:hover:before{
+    @apply w-0;
+}
+.yellow-btn:hover:after{
+    @apply h-0;
+}
+.progress-bar:after{
+    @apply content-[''] border-b-[12px] border-transparent absolute bg-no-repeat w-[20px] right-[-15px] top-[-5px] bg-progress-bar-bg;
+}
+.circle:hover .img-svg path , .circle:hover .img-svg text{
+    @apply fill-black;
+}
+.gallery-main-head:after{
+    @apply content-['…………'] text-black text-[23px] leading-[23px] absolute left-0 top-[25px] right-0;
+}
+.galary-img:hover .img-caption{
+    @apply opacity-100;
+}
+.galary-img:hover img{
+    @apply scale-110;
+}
+.container{
+    @apply max-w-[96%];
+}
+.wp-block-social-links.is-style-logos-only .wp-social-link svg{
+    @apply fill-white;
+}
+.custom_sticky_color{
+    @apply bg-[#1a1a1a] sticky;
+}
+.custom_sticky_color a , .cust-tra-head a{
+    @apply text-white;
+}
+.gform_heading{
+    @apply my-[20px] text-[46px] leading-[46px] text-[#FFA830] relative text-center;
+}
+.gform_heading:after{
+    @apply content-['…………'] text-black text-[23px] leading-[23px] absolute left-0 top-[30px] right-0;
+}
+.gform_required_legend{
+    @apply hidden;
+}
+.gform_body input , .gform_body textarea{
+    @apply border-2;
+}
+.gform_footer.top_label{
+    @apply relative cursor-pointer;
+}
+.gform_button{
+    @apply relative cursor-pointer transition-all bg-[#FFA830] text-white border-2 items-center justify-center w-[227px] h-[64px];
+}
+.gform_footer.top_label:after , .gform_footer.top_label::before{
+    @apply content-[''] absolute bg-[#FFA830] transition-all duration-300;
+}
+.gform_footer.top_label:before{
+    @apply h-[1px] left-[10px] bottom-[18px] w-[18%];
+}
+.gform_footer.top_label:after{
+    @apply h-[74%] top-[17px] left-[231px] w-[1px];
+}
+.gform_footer.top_label:hover:before{
+    @apply w-0;
+}
+.gform_footer.top_label:hover:after{
+    @apply h-0;
+}
+.woocommerce .woocommerce-breadcrumb a , .woocommerce .woocommerce-breadcrumb{
+    @apply text-white text-[22px] leading-[22px];
+}
