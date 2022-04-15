@@ -1,0 +1,6 @@
+Apr 11 2022 09:17:05
+{"Number":2,"Message":"fopen(\/var\/www\/html\/wp-content\/themes\/first-learn-theme\/.git\/objects\/pack\/pack-1a00febb6606364b57e6f115c71bb6f965e85077.pack): Failed to open stream: Permission denied","File":"\/var\/www\/html\/wp-content\/plugins\/all-in-one-wp-migration\/lib\/vendor\/servmask\/archiver\/class-ai1wm-extractor.php","Line":422}
+
+Apr 11 2022 09:17:05
+{"Number":2,"Message":"fopen(\/var\/www\/html\/wp-content\/themes\/first-learn-theme\/.git\/objects\/pack\/pack-1a00febb6606364b57e6f115c71bb6f965e85077.idx): Failed to open stream: Permission denied","File":"\/var\/www\/html\/wp-content\/plugins\/all-in-one-wp-migration\/lib\/vendor\/servmask\/archiver\/class-ai1wm-extractor.php","Line":422}
+
