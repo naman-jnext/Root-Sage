@@ -1,10 +1,21 @@
 <?php
 /**
- * #ddev-generated: Automatically generated WordPress settings file.
- * ddev manages this file and may delete or overwrite the file unless this comment is removed.
- * It is recommended that you leave this file alone.
+ * The base configuration for WordPress
  *
- * @package ddevapp
+ * The wp-config.php creation script uses this file during the installation.
+ * You don't have to use the web site, you can copy this file to "wp-config.php"
+ * and fill in the values.
+ *
+ * This file contains the following configurations:
+ *
+ * * Database settings
+ * * Secret keys
+ * * Database table prefix
+ * * ABSPATH
+ *
+ * @link https://wordpress.org/support/article/editing-wp-config-php/
+ *
+ * @package WordPress
  */
 
 // ** Database settings - You can get this info from your web host ** //
@@ -26,7 +37,17 @@ define( 'DB_CHARSET', 'utf8' );
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
-/** Authentication Unique Keys and Salts. */
+/**#@+
+ * Authentication unique keys and salts.
+ *
+ * Change these to different unique phrases! You can generate these using
+ * the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}.
+ *
+ * You can change these at any point in time to invalidate all existing cookies.
+ * This will force all users to have to log in again.
+ *
+ * @since 2.6.0
+ */
 define( 'AUTH_KEY', 'IeqAhlgGCimYNtNodaieGwNbewYmiHBKSKiCyZJuBpJQrYjjQsDuKcKqPWipmuMl' );
 define( 'SECURE_AUTH_KEY', 'uwjDxIChwDgvauxFIzoFitevHldVxZwchpPSTAvoyeRUXnwCQvVZpOBNvSUXlKdT' );
 define( 'LOGGED_IN_KEY', 'CGPWFRrJtIFngvPhgZUedPBhaHFWBSCBiwbcGfnYTtDjkSkEWhyvvpiwlvcNBNdM' );
@@ -35,17 +56,40 @@ define( 'AUTH_SALT', 'MLuKovcYPiDemmJDhHWBiEKOHsJTszNrGXTkMELrGAtgzInFfqXEtvPPSE
 define( 'SECURE_AUTH_SALT', 'LWhGjtOIuBYurQkkLGOAncVURESACWWLDbpmEMxyIaEOTXpFBMYvXkfaJWkXOMBY' );
 define( 'LOGGED_IN_SALT', 'PmJBmOqnaZdlBHbQqtdSfMqQxFHQAPfHsmRFfmUoUYfGxlsOVLDwoGTgUGEzaTDD' );
 define( 'NONCE_SALT', 'rTkqVpOTrvohbxWGxTpAfpOAMTdVLqbJaeFmqQxpyfscobTNwtnRcnytLMsdCmIZ' );
+/**#@-*/
+
+/**
+ * WordPress database table prefix.
+ *
+ * You can have multiple installations in one database if you give each
+ * a unique prefix. Only numbers, letters, and underscores please!
+ */
+$table_prefix = 'wp_';
+
+/**
+ * For developers: WordPress debugging mode.
+ *
+ * Change this to true to enable the display of notices during development.
+ * It is strongly recommended that plugin and theme developers use WP_DEBUG
+ * in their development environments.
+ *
+ * For information on other constants that can be used for debugging,
+ * visit the documentation.
+ *
+ * @link https://wordpress.org/support/article/debugging-in-wordpress/
+ */
+define( 'WP_DEBUG', false );
+
+/* Add any custom values between this line and the "stop editing" line. */
+
+
+
+/* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
-defined( 'ABSPATH' ) || define( 'ABSPATH', dirname( __FILE__ ) . '/' );
-
-// Include for settings managed by ddev.
-$ddev_settings = dirname( __FILE__ ) . '/wp-config-ddev.php';
-if ( is_readable( $ddev_settings ) && ! defined( 'DB_USER' ) && getenv( 'IS_DDEV_PROJECT' ) == 'true' ) {
-	require_once( $ddev_settings );
+if ( ! defined( 'ABSPATH' ) ) {
+    define( 'ABSPATH', __DIR__ . '/' );
 }
 
-/** Include wp-settings.php */
-if ( file_exists( ABSPATH . '/wp-settings.php' ) ) {
-	require_once ABSPATH . '/wp-settings.php';
-}
+/** Sets up WordPress vars and included files. */
+require_once ABSPATH . 'wp-settings.php';
